@@ -36,6 +36,7 @@ class App( Tk ):
         self.l2 = Label( self, image = photo )
         self.l2.image = photo
         self.l2.pack()
+        self.b1.config( state = DISABLED )
     #------------------------------------------------------------------
     def OpenFile( self ) :
         self.filename = askopenfilename (
@@ -51,6 +52,7 @@ class App( Tk ):
             self.data_0 = l.data_image( self.filename )
 
             self.LoadImage()
+            self.geometry("800x650")
 
         except :
             self.OpenFile()
