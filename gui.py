@@ -35,6 +35,17 @@ class App( Tk ):
 
         self.mainloop()
     #------------------------------------------------------------------
+    def Details ( self ) :
+
+        if item[0] == 2 :
+            self.ls1 = Label( self, text = "iterations:" ).pack()
+            self.s1 = Spinbox( self, from_ = 1, to = 3 )
+            self.s1.pack()
+        if item[0] == 4 :
+            self.ls1 = Label( self, text = "range:" ).pack()
+            self.w1 = Scale( self, from_ = 0, to = 100, orient = HORIZONTAL )
+            self.w1.pack()
+    #------------------------------------------------------------------
     def ChooseOption( self ) :
         self.lbox = Listbox( self, listvariable = self.loptions,
                                    font = ( 'Arial', 10 ),
