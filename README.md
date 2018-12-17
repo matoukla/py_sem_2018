@@ -14,4 +14,5 @@ Semestral project, Python 3.6 = basic image edits ©
       - Sharpen
 
 <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/inv_kvetina.jpg" width="150"> <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/gs_kvetina.jpg" width="150"> <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/bgr_kvetina.jpg" width="150"> <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/bd_1_kvetina.jpg" width="150">
+
 <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/mr_0_kvetina.jpg" width="150"> <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/bd_0_kvetina.jpg" width="150"> <img  src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/sharp_kvetina.jpg" width="150"> <img src="https://github.com/matoukla/py_sem_2018/blob/master/kvetina/blur_kvetina.jpg" width="150">
