@@ -70,6 +70,11 @@ class App( Tk ):
         else :
             pass
 
+        self.NewWindow( nf )
+        self.l3 = Label( self, text = "Exported to " + nf,
+                               foreground = "black",
+                               font = ( "Times New Roman", 10 ) )
+        self.l3.pack()
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
