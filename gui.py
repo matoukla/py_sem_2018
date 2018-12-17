@@ -16,9 +16,14 @@ class App( Tk ):
         self.l1.pack()
         # --------------------------------------B1
         self.b1 = Button( self, text = "Browse",
-                                        width = 25,
-                                        command = self.OpenFile )
+                                width = 25,
+                                command = self.OpenFile )
         self.b1.pack( side = TOP )
+        # --------------------------------------B2
+        self.b2 = Button( self, text = "Exit",
+                                width = 25,
+                                command = lambda:exit() )
+        self.b2.pack( side = TOP )
 
         self.mainloop()
     #------------------------------------------------------------------
@@ -34,4 +39,6 @@ class App( Tk ):
             self.path = os.path.split( self.filename )
             l.make_dir ( self.filename )
             self.data_0 = l.data_image( self.filename )
+        except :
+            self.OpenFile()
 #----------------------------------------------------------------------
