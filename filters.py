@@ -39,3 +39,21 @@ def rt ( data, iterations, path ) :
     out.save( sv )
     return sv
 #----------------------------------------------------------------------
+def bd ( data, extent, bright, path ) :
+    val = float( extent ) / 100.0
+    mult = 1.0
+
+    if bright is True :
+        mult += val
+    else :
+        mult -= val
+
+    bd = data * mult
+    bd[ bd > 255 ] = 255
+    bd[ bd < 0 ] = 0
+
+    sv = path[0] + "/" + path[1].split('.')[0] + '/bd_'+ str( int( bright ) ) + '_'+ path[1]
+    out = Image.fromarray( bd.astype( dtype = np.uint8 ), mode ='RGB' )
+    out.save( sv )
+    return sv
+#----------------------------------------------------------------------
