@@ -45,6 +45,17 @@ class App( Tk ):
             self.ls1 = Label( self, text = "range:" ).pack()
             self.w1 = Scale( self, from_ = 0, to = 100, orient = HORIZONTAL )
             self.w1.pack()
+        if item[0] == 5 :
+            self.ls1 = Label( self, text = "range:" ).pack()
+            self.w1 = Scale( self, from_= 0, to = 100, orient = HORIZONTAL )
+            self.w1.pack()
+        if item[0] == 6 :
+            self.ls1 = Label( self, text = "axis:" ).pack()
+            self.r1 = Radiobutton( self, text ='X', variable = self.vx, value = 0).pack()
+            self.r2 = Radiobutton( self, text ='Y', variable = self.vx, value = 1).pack()
+        else :
+            pass
+        
     #------------------------------------------------------------------
     def ChooseOption( self ) :
         self.lbox = Listbox( self, listvariable = self.loptions,
