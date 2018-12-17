@@ -2,10 +2,12 @@
 import numpy as np
 import filters as f
 import load as l
+import os
 #----------------------------------------------------------------------
-path = "C:/Users/klarm/Documents/pyth/py_sem_2018/kvetina.jpg"
-l.make_dir ( path )
-data_0 = l.data_image( path )
+path_0 = "C:/Users/klarm/Documents/pyth/py_sem_2018/kvetina.jpg"
+path = os.path.split( path_0 )
+l.make_dir ( path_0 )
+data_0 = l.data_image( path_0 )
 
 f.inv ( data_0, path )
 f.gs ( data_0, path )
