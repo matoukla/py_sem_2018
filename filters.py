@@ -1,5 +1,15 @@
 from PIL import Image
 import numpy as np
+# This file contains all basic image operations and exports the result
+# Operations :
+#   Invert
+#   Grayscale
+#   Rotate
+#   Brighten/Darken
+#   Mirror
+#   BGR swap
+#   Blur
+#   Sharpen
 #------------------------------------------------------------------------------
 def inv ( data, path ) :
     neg = 255 - data
