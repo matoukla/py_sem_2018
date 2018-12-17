@@ -9,3 +9,6 @@ data_0 = l.data_image( path )
 
 f.inv ( data_0, path )
 f.gs ( data_0, path )
+f.rt ( data_0, 1, path )
+f.rt ( data_0, 2, path )
+f.rt ( data_0, 3, path )
