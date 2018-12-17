@@ -9,6 +9,9 @@ class App( Tk ):
     def __init__( sef ):
         Tk.__init__( self )
         self.filename = ""
+        self.formats = [ ('JPEG','*.jpg'),
+                         ('Windows Bitmap','*.bmp'),
+                         ('Portable Network Graphics','*.png') ]
         # --------------------------------------L1
         self.l1 = Label( self, text = "basic image edits ©",
                                foreground = "blue",
@@ -27,6 +30,13 @@ class App( Tk ):
 
         self.mainloop()
     #------------------------------------------------------------------
+    def LoadImage( self ) :
+        img = ImagePIL.open( self.filename )
+        photo = ImageTk.PhotoImage( img )
+        self.l2 = Label( self, image = photo )
+        self.l2.image = photo
+        self.l2.pack()
+    #------------------------------------------------------------------
     def OpenFile( self ) :
         self.filename = askopenfilename (
                          initialdir = "C:/Users/klarm/Documents/pyth",
@@ -39,6 +49,9 @@ class App( Tk ):
             self.path = os.path.split( self.filename )
             l.make_dir ( self.filename )
             self.data_0 = l.data_image( self.filename )
+
+            self.LoadImage()
+
         except :
             self.OpenFile()
 #----------------------------------------------------------------------
