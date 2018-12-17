@@ -105,7 +105,7 @@ class App( Tk ):
 
         self.b3 = Button ( self, text = "Go!",
                                  width = 25,
-                                 command = self.ProcessOption )
+                                 command = self.ProccessOption )
         self.b3.pack()
     #------------------------------------------------------------------
     def ChooseOption( self ) :
