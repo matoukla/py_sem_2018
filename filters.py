@@ -109,5 +109,19 @@ def blr ( data, lvl, path ) :
     out.save( sv )
     return sv
 #----------------------------------------------------------------------
-def shrp ( data, path ) :
-    pass
+def shrp ( data, lvl, amount, threshold, path ) :
+    blurr = blur( data, lvl, path )
+    sh = float( amount + 1 ) * data - float( amount ) * blurr
+
+    sh = np.maximum( sh, np.zeros( sh.shape ))
+    sh = np.minimum( sh, 255 * np.ones( sh.shape ))
+    sh = sh.round().astype( np.uint8 )
+
+    if threshold > 0 :
+        low_contrast = np.absolute( data - blurr ) < threshold
+        np.copyto( sh, data, where = low_contrast )
+
+    sv = path[0] + "/" + path[1].split('.')[0] + '/sharp_' + path[1]
+    out = Image.fromarray( sh, mode = 'RGB' )
+    out.save( sv )
+    return sv
