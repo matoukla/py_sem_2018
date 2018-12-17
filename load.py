@@ -1,5 +1,7 @@
 from PIL import Image
 import numpy as np
+import os
+import sys
 #----------------------------------------------------------------------
 def data_image ( open_img ) :
     i = Image.open( open_img ).convert( 'RGB' )
