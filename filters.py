@@ -66,7 +66,14 @@ def mr ( data, axis, path ) :
     return sv
 #----------------------------------------------------------------------
 def bgr ( data, path ) :
-    pass
+    B, G, R = data.T
+    rgb = np.array((R, G, B)).T
+
+    sv = path[0] +"/" + path[1].split('.')[0] +'/bgr_' + path[1]
+    out = Image.fromarray( rgb, mode ='RGB' )
+    out.save( sv )
+    return sv
+#----------------------------------------------------------------------
 def blur ( data, lvl, path ) :
     pass
 def shrp ( data, path ) :
