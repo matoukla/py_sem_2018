@@ -5,6 +5,10 @@ from tkinter.filedialog import askopenfilename
 import filters as f
 import load as l
 #----------------------------------------------------------------------
+class App( Tk ):
+    def __init__( sef ):
+        Tk.__init__( self )
+        self.filename = ""
 
-class App():
-    pass
+        self.mainloop()
+#----------------------------------------------------------------------
