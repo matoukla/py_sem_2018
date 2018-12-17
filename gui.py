@@ -37,10 +37,15 @@ class App( Tk ):
     #------------------------------------------------------------------
     def ChooseOption( self ) :
         self.lbox = Listbox( self, listvariable = self.loptions,
-                                   font = ( 'Arial', 10 ) ),
+                                   font = ( 'Arial', 10 ),
                                    height = 9 )
         self.lbox.pack( side = LEFT )
         self.lbox.select_set( 0 )
+
+        self.b4 = Button ( self, text = "Choose",
+                                 width = 25,
+                                 command = self.Details )
+        self.b4.pack( side = TOP )
     #------------------------------------------------------------------
     def LoadImage( self ) :
         img = ImagePIL.open( self.filename )
@@ -64,6 +69,7 @@ class App( Tk ):
             self.data_0 = l.data_image( self.filename )
 
             self.LoadImage()
+            self.ChooseOption()
             self.geometry("800x650")
 
         except :
