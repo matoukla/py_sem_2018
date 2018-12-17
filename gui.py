@@ -35,6 +35,16 @@ class App( Tk ):
 
         self.mainloop()
     #------------------------------------------------------------------
+    def NewWindow ( self, nf ) :
+        window = Toplevel( self )
+        window.title( "Result" )
+
+        img = ImagePIL.open( nf )
+        photo = ImageTk.PhotoImage( img )
+        self.l3 = Label( window, image = photo )
+        self.l3.image = photo
+        self.l3.pack()
+    #------------------------------------------------------------------
     def ProccessOption ( self ) :
         item = self.lbox.curselection()
         nf = ""
@@ -59,7 +69,7 @@ class App( Tk ):
             nf = f.shrp( self.data_0, 1, 1.0, 0, self.path )
         else :
             pass
-        
+
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
