@@ -1,6 +1,7 @@
 from PIL import Image as ImagePIL
 from PIL import ImageTk
 from tkinter import *
+from tkinter import ttk
 from tkinter.filedialog import askopenfilename
 import filters as f
 import load as l
@@ -9,7 +10,7 @@ import os
 # For GUI is used Tkinter
 #----------------------------------------------------------------------
 class App( Tk ):
-    def __init__( sef ):
+    def __init__( self ):
         Tk.__init__( self )
         self.filename = ""
         self.formats = [ ('JPEG','*.jpg'),
