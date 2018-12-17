@@ -1,2 +1,4 @@
-import filters as f
-import load as l
+from gui import App
+#==================================
+a = App()
+#==================================
