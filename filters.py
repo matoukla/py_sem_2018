@@ -65,3 +65,9 @@ def mr ( data, axis, path ) :
     out.save( sv )
     return sv
 #----------------------------------------------------------------------
+def bgr ( data, path ) :
+    pass
+def blur ( data, lvl, path ) :
+    pass
+def shrp ( data, path ) :
+    pass
