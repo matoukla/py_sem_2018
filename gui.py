@@ -35,7 +35,14 @@ class App( Tk ):
 
         self.mainloop()
     #------------------------------------------------------------------
+    def ProccessOption ( self ) :
+        pass
+    #------------------------------------------------------------------
     def Details ( self ) :
+        item = self.lbox.curselection()
+        self.lbox.config( state = DISABLED )
+        self.b4.config( state = DISABLED )
+        self.vx = IntVar()
 
         if item[0] == 2 :
             self.ls1 = Label( self, text = "iterations:" ).pack()
@@ -55,7 +62,11 @@ class App( Tk ):
             self.r2 = Radiobutton( self, text ='Y', variable = self.vx, value = 1).pack()
         else :
             pass
-        
+
+        self.b3 = Button ( self, text = "Go!",
+                                 width = 25,
+                                 command = self.ProcessOption )
+        self.b3.pack()
     #------------------------------------------------------------------
     def ChooseOption( self ) :
         self.lbox = Listbox( self, listvariable = self.loptions,
