@@ -36,7 +36,29 @@ class App( Tk ):
         self.mainloop()
     #------------------------------------------------------------------
     def ProccessOption ( self ) :
-        pass
+        item = self.lbox.curselection()
+        nf = ""
+
+        if item[0] == 0 :
+            nf = f.inv( self.data_0, self.path )
+        if item[0] == 1 :
+            nf = f.gs( self.data_0, self.path )
+        if item[0] == 2 :
+            nf = f.rt( self.data_0, int ( self.s1.get() ), self.path )
+        if item[0] == 3 :
+            nf = f.bgr( self.data_0, self.path )
+        if item[0] == 4 :
+            nf = f.bd( self.data_0, int ( self.w1.get() ), True, self.path )
+        if item[0] == 5 :
+            nf = f.bd( self.data_0, int ( self.w1.get() ), False, self.path )
+        if item[0] == 6 :
+            nf = f.mr( self.data_0, int ( self.vx.get() ) , self.path )
+        if item[0] == 7 :
+            pass
+        if item[0] == 8 :
+            pass
+        else :
+            pass
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
