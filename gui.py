@@ -54,11 +54,12 @@ class App( Tk ):
         if item[0] == 6 :
             nf = f.mr( self.data_0, int ( self.vx.get() ) , self.path )
         if item[0] == 7 :
-            pass
+            nf = f.blr( self.data_0, 1, self.path )
         if item[0] == 8 :
-            pass
+            nf = f.shrp( self.data_0, 1, 1.0, 0, self.path )
         else :
             pass
+        
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
