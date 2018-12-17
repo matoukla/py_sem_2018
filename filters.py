@@ -57,3 +57,11 @@ def bd ( data, extent, bright, path ) :
     out.save( sv )
     return sv
 #----------------------------------------------------------------------
+def mr ( data, axis, path ) :
+    mirror = np.flip( data, axis )
+
+    sv = path[0] + "/" + path[1].split('.')[0] + '/mr_' + str( axis ) + "_" + path[1]
+    out = Image.fromarray( mirror, mode = 'RGB' )
+    out.save( sv )
+    return sv
+#----------------------------------------------------------------------
