@@ -4,6 +4,8 @@ from tkinter import *
 from tkinter.filedialog import askopenfilename
 import filters as f
 import load as l
+# This is file that contains class that manages the GUI of the app
+# For GUI is used Tkinter
 #----------------------------------------------------------------------
 class App( Tk ):
     def __init__( sef ):
@@ -12,6 +14,9 @@ class App( Tk ):
         self.formats = [ ('JPEG','*.jpg'),
                          ('Windows Bitmap','*.bmp'),
                          ('Portable Network Graphics','*.png') ]
+        self.options = ( 'invert', 'greyscale', 'rotate', 'bgr',
+                         'brighten', 'darken', 'mirror', 'blur', 'sharp' )
+        self.loptions = StringVar( value = self.options )
         # --------------------------------------L1
         self.l1 = Label( self, text = "basic image edits ©",
                                foreground = "blue",
@@ -29,6 +34,13 @@ class App( Tk ):
         self.b2.pack( side = TOP )
 
         self.mainloop()
+    #------------------------------------------------------------------
+    def ChooseOption( self ) :
+        self.lbox = Listbox( self, listvariable = self.loptions,
+                                   font = ( 'Arial', 10 ) ),
+                                   height = 9 )
+        self.lbox.pack( side = LEFT )
+        self.lbox.select_set( 0 )
     #------------------------------------------------------------------
     def LoadImage( self ) :
         img = ImagePIL.open( self.filename )
