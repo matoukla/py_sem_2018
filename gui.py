@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter.filedialog import askopenfilename
 import filters as f
 import load as l
+import os
 # This is file that contains class that manages the GUI of the app
 # For GUI is used Tkinter
 #----------------------------------------------------------------------
