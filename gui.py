@@ -37,7 +37,7 @@ class App( Tk ):
 
         self.mainloop()
     #------------------------------------------------------------------
-    def NewWindow ( self, nf ) :
+    def NewPicWindow ( self, nf ) :
         window = Toplevel( self )
         window.title( "Result" )
 
@@ -69,8 +69,9 @@ class App( Tk ):
             nf = f.shrp( self.data_0, 1, 1.0, 0, self.path )
         else :
             pass
+        self.window.destroy()
 
-        self.NewWindow( nf )
+        self.NewPicWindow( nf )
         self.l3 = Label( self, text = "Exported to " + nf,
                                foreground = "black",
                                font = ( "Times New Roman", 10 ) )
@@ -78,38 +79,41 @@ class App( Tk ):
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
-        self.lbox.config( state = DISABLED )
-        self.b4.config( state = DISABLED )
+        #self.lbox.config( state = DISABLED )
+        #self.b4.config( state = DISABLED )
         self.vx = IntVar()
 
+        self.window = Toplevel( self )
+        self.window.title( "Options" )
+
         if item[0] == 2 :
-            self.ls1 = Label( self, text = "iterations:" ).pack()
-            self.s1 = Spinbox( self, from_ = 1, to = 3 )
+            self.ls1 = Label( self.window, text = "iterations:" ).pack()
+            self.s1 = Spinbox( self.window, from_ = 1, to = 3 )
             self.s1.pack()
         if item[0] == 4 :
-            self.ls1 = Label( self, text = "range:" ).pack()
-            self.w1 = Scale( self, from_ = 0, to = 100, orient = HORIZONTAL )
+            self.ls1 = Label( self.window, text = "range:" ).pack()
+            self.w1 = Scale( self.window, from_ = 0, to = 100, orient = HORIZONTAL )
             self.w1.pack()
         if item[0] == 5 :
-            self.ls1 = Label( self, text = "range:" ).pack()
-            self.w1 = Scale( self, from_= 0, to = 100, orient = HORIZONTAL )
+            self.ls1 = Label( self.window, text = "range:" ).pack()
+            self.w1 = Scale( self.window, from_= 0, to = 100, orient = HORIZONTAL )
             self.w1.pack()
         if item[0] == 6 :
-            self.ls1 = Label( self, text = "axis:" ).pack()
-            self.r1 = Radiobutton( self, text ='X', variable = self.vx, value = 0).pack()
-            self.r2 = Radiobutton( self, text ='Y', variable = self.vx, value = 1).pack()
+            self.ls1 = Label( self.window, text = "axis:" ).pack()
+            self.r1 = Radiobutton( self.window, text ='X', variable = self.vx, value = 0).pack()
+            self.r2 = Radiobutton( self.window, text ='Y', variable = self.vx, value = 1).pack()
         else :
             pass
 
-        self.b3 = Button ( self, text = "Go!",
-                                 width = 25,
-                                 command = self.ProccessOption )
+        self.b3 = Button ( self.window, text = "Go!",
+                                        width = 25,
+                                        command = self.ProccessOption )
         self.b3.pack()
     #------------------------------------------------------------------
     def ChooseOption( self ) :
         self.lbox = Listbox( self, listvariable = self.loptions,
                                    font = ( 'Arial', 10 ),
-                                   height = 9 )
+                                   height = 8 )
         self.lbox.pack( side = LEFT )
         self.lbox.select_set( 0 )
 
