@@ -93,12 +93,6 @@ def blur( data, path ):
     l_sum = np.sum( l, axis = 0 )
     return l_sum
 #----------------------------------------------------------------------
-def blr ( data, lvl, path ) :
-    sv = path[0] + "/" + path[1].split('.')[0] + '/blur_' + path[1]
-    out = Image.fromarray( blur( data, path ), mode = 'RGB' )
-    out.save( sv )
-    return sv
-#----------------------------------------------------------------------
 def shrp ( data, lvl, amount, threshold, path ) :
     blurr = blur( data, path )
     sh = float( amount + 1 ) * data - float( amount ) * blurr

@@ -17,7 +17,7 @@ class App( Tk ):
                          ('Windows Bitmap','*.bmp'),
                          ('Portable Network Graphics','*.png') ]
         self.options = ( 'invert', 'greyscale', 'rotate', 'bgr',
-                         'brighten', 'darken', 'mirror', 'blur', 'sharp' )
+                         'brighten', 'darken', 'mirror', 'sharp' )
         self.loptions = StringVar( value = self.options )
         # --------------------------------------L1
         self.l1 = Label( self, text = "basic image edits ©",
@@ -66,8 +66,6 @@ class App( Tk ):
         if item[0] == 6 :
             nf = f.mr( self.data_0, int ( self.vx.get() ) , self.path )
         if item[0] == 7 :
-            nf = f.blr( self.data_0, 1, self.path )
-        if item[0] == 8 :
             nf = f.shrp( self.data_0, 1, 1.0, 0, self.path )
         else :
             pass
