@@ -66,7 +66,7 @@ class App( Tk ):
         if item[0] == 6 :
             nf = f.mr( self.data_0, int ( self.vx.get() ) , self.path )
         if item[0] == 7 :
-            nf = f.shrp( self.data_0, 1, 1.0, 0, self.path )
+            nf = f.shrp( self.data_0, 1, 2.0, 0, self.path )
         else :
             pass
         self.window.destroy()
@@ -79,8 +79,6 @@ class App( Tk ):
     #------------------------------------------------------------------
     def Details ( self ) :
         item = self.lbox.curselection()
-        #self.lbox.config( state = DISABLED )
-        #self.b4.config( state = DISABLED )
         self.vx = IntVar()
 
         self.window = Toplevel( self )
